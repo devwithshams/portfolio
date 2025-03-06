@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamsuddeen | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="{% static 'portfolio/animate.gif' %}">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-r  rounded-full ">
+                    <img src="{% static 'portfolio/animate.gif' %}" type="image/png" alt="">
+                </div>
+                <span class="text-lg font-semibold text-gray-800">
+
+                    <a href="{% url 'home' %}"> Devwithshams</a></span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="space-x-6 hidden md:flex items-center">
+                <a href="{% url 'cv' %}"  class="text-gray-700 hover:text-blue-500 transition-all duration-300 relative group">
+                    Resume
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://linkedin.com/in/devwithshams" target="_blank" class="text-gray-700 hover:text-blue-500 transition-all duration-300 relative group">
+                    LinkedIn
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://x.com/devwithshams" target="_blank" class="text-gray-700 hover:text-blue-500 transition-all duration-300 relative group">
+                    Twitter
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="{% url 'blog:all_blogs' %}" class="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 py-2 rounded-md hover:from-purple-700 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Blog
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Resume</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">LinkedIn</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Twitter</a>
+            <a href="{% url 'blog:all_blogs' %}" class="block px-4 py-2 text-white bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600">
+                Blog
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <!-- Content from other templates will go here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-8 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600">&copy; 2025 Devwithshams. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://linkedin.com/in/devwithshams" target="_blank" class="text-gray-600 hover:text-blue-500">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/devwithshams" target="_blank" class="text-gray-600 hover:text-blue-500">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="mailto:talktoshamsuddeen@gmail.com" class="text-gray-600 hover:text-blue-500">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+            <a href="#" class="mt-4 inline-block text-gray-600 hover:text-blue-500">
+                <i class="fas fa-arrow-up"></i> Back to Top
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
