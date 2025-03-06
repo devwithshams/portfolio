@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="{% static 'portfolio/animate.gif' %}">
 </head>
 <body class="bg-gray-100 text-gray-900">
-    
+
     <!-- Navbar -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -26,7 +26,7 @@
 
                     <a href="{% url 'home' %}"> Devwithshams</a></span>
             </div>
-            
+
             <!-- Navigation Links -->
             <div class="space-x-6 hidden md:flex items-center">
                 <a href="{% url 'cv' %}"  class="text-gray-700 hover:text-blue-500 transition-all duration-300 relative group">
@@ -56,9 +56,9 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Resume</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">LinkedIn</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Twitter</a>
+            <a href="{% url 'cv' %}" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Resume</a>
+            <a href="https://linkedin.com/in/devwithshams" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">LinkedIn</a>
+            <a href="https://x.com/devwithshams" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Twitter</a>
             <a href="{% url 'blog:all_blogs' %}" class="block px-4 py-2 text-white bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600">
                 Blog
             </a>
